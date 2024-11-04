@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_hiro/screens/signin_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -11,7 +12,8 @@ class SignUpScreen extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/signup_background.jpeg'), // Add this image to your assets
+                image: AssetImage(
+                    'assets/images/signup_background.jpeg'), // Add this image to your assets
                 fit: BoxFit.cover,
               ),
             ),
@@ -110,6 +112,12 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   onPressed: () {
                     // Handle registration logic here
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: ((context) => const SignInScreen()),
+                      ),
+                    );
                   },
                   child: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
